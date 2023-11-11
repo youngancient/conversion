@@ -4,14 +4,17 @@
 def convert_to_base_two(num):
     num = int(num)
     num_list = []
-    while num > 1:
-        num_list.append(str(num % 2))
-        num = num // 2
-        if num == 1:
-            num_list.append("1")
-            break
-    num_list.reverse()
-    return "".join(num_list)
+    if num > 1:
+        while num > 1:
+            num_list.append(str(num % 2))
+            num = num // 2
+            if num == 1:
+                num_list.append("1")
+                break
+        num_list.reverse()
+        return "".join(num_list)
+    else:
+        return str(num)
         
 # print(convert_to_base_two("2147483647"))
 
@@ -47,4 +50,4 @@ def flippingBits(n):
     flipped_num = flipFunction(num)
     # convert to base 10
     return convert_to_base_ten(flipped_num)
-print(flippingBits(2147483647))
+print(flippingBits(0))
